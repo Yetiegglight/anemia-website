@@ -661,36 +661,22 @@
         </div>
 <div id="visitor-counter">
     👥 Personas que han visitado esta página:
+    <span id="visitor-number">Cargando...</span>
 </div>
-
-<div id="visitor-counter">
-    👥 Personas que han visitado esta página: <span id="visitor-number">Cargando...</span>
-</div>
-
-<script>
-    var t = setInterval(function() {
-        if (window.goatcounter && window.goatcounter.visit_count) {
-            clearInterval(t);
-
-            window.goatcounter.visit_count({
-                append: '#visitor-number',
-                path: 'TOTAL',
-                type: 'html',
-                no_branding: true
-            });
-        }
-    }, 100);
-</script>
 
 <script
     data-goatcounter="https://Yetiegglight.goatcounter.com/count"
     async
     src="https://gc.zgo.at/count.js">
 </script>
-    </footer>
 
-
-    <script src="quiz.js"></script>
-
-</body>
-</html>
+<script>
+    window.addEventListener("load", function () {
+        if (window.goatcounter) {
+            window.goatcounter.visit_count({
+                append: "#visitor-number",
+                path: "TOTAL"
+            });
+        }
+    });
+</script>
