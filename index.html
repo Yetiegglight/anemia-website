@@ -663,14 +663,19 @@
     👥 Personas que han visitado esta página:
 </div>
 
+<div id="visitor-counter">
+    👥 Personas que han visitado esta página: <span id="visitor-number">Cargando...</span>
+</div>
+
 <script>
     var t = setInterval(function() {
         if (window.goatcounter && window.goatcounter.visit_count) {
             clearInterval(t);
 
             window.goatcounter.visit_count({
-                append: '#visitor-counter',
+                append: '#visitor-number',
                 path: 'TOTAL',
+                type: 'html',
                 no_branding: true
             });
         }
@@ -680,7 +685,7 @@
 <script
     data-goatcounter="https://Yetiegglight.goatcounter.com/count"
     async
-    src="//gc.zgo.at/count.js">
+    src="https://gc.zgo.at/count.js">
 </script>
     </footer>
 
