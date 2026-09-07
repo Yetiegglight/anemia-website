@@ -659,7 +659,29 @@
         <div class="copyright">
             © 2026 AntiAnemia · Proyecto educativo
         </div>
+<div id="visitor-counter">
+    👥 Personas que han visitado esta página:
+</div>
 
+<script>
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t);
+
+            window.goatcounter.visit_count({
+                append: '#visitor-counter',
+                path: 'TOTAL',
+                no_branding: true
+            });
+        }
+    }, 100);
+</script>
+
+<script
+    data-goatcounter="https://Yetiegglight.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js">
+</script>
     </footer>
 
 
