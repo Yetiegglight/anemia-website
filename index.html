@@ -669,12 +669,15 @@
         src="https://gc.zgo.at/count.js"></script>
 
 <script>
-window.addEventListener("load", function () {
-    if (window.goatcounter) {
-        window.goatcounter.visit_count({
-            append: "#visitor-number",
-            path: "TOTAL"
-        });
-    }
-});
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t);
+
+            window.goatcounter.visit_count({
+                append: "#visitor-number",
+                path: "TOTAL",
+                no_branding: true
+            });
+        }
+    }, 100);
 </script>
